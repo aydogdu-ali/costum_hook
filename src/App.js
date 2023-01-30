@@ -1,11 +1,44 @@
-import logo from './logo.svg';
+import  Picture from "./components/Picture"
+import Video from "./components/Video";
 import './App.css';
+import { useState } from "react";
 
 function App() {
+  const [picture , setPicture] = useState(false)
+ const [video, setVideo] = useState(false);
+
+ const handeClickp =()=>{
+  setPicture(true)
+  setVideo(false)
+ }
+  const handeClickv = () => {
+    setPicture(false);
+    setVideo(true);
+  };
+
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <div className="header">
+        <h1>Ne Aramak İstersiniz </h1>
+        <div>
+          <button onClick={handeClickp}> Fotoğraf</button>
+          <button onClick={handeClickv}>Video</button>
+        </div>
+      </div>
+      <div className="App">
+        {picture && (
+          <aside>
+            <Picture />
+          </aside>
+        )}
+
+        {video && (
+          <aside>
+            <Video />
+          </aside>
+        )}
+      </div>
+    </>
   );
 }
 

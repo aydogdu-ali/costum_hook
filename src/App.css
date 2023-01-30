@@ -2,7 +2,7 @@
  text-align: center;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+ 
 }
 
 .picture{
@@ -12,4 +12,28 @@ flex-basis: 50%;
 
 .video{
   flex-basis: 50%; 
+
+ 
+}
+
+
+
+
+.show-hidden{
+  display: none;
+
+}
+.show{
+display: flex;
+flex-wrap: wrap;
+flex-basis: 20%;
+justify-content: center;
+gap: 0.5rem;
+}
+
+.picture-show img{
+  width:400px ;
+  height: 350px;
+  box-shadow: 0 3px 10px 0.5px;
+
 }
