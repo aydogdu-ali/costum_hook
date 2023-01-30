@@ -15,7 +15,7 @@ console.log(shows)
   return (
     <div className="picture">
       <h1>{loading ? "Yükleniyor" : "Fotoğraflar"}</h1>
-      <form action="" onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit}>
         <input
           type="search"
           placeholder="search"
@@ -29,9 +29,12 @@ console.log(shows)
         //   const { id, webformatURL } = item;
           return (
             <div className="picture-show" key={item.id}>
+              <div>
+              
+                <p> Kategorisi: {item.tags}</p>
+                <small>Beğeni sayısı:{item.likes}</small>
+              </div>
               <img src={item.webformatURL} alt={item.tags} />
-              <p> Kategorisi: {item.tags}</p>
-              <small>Beğeni sayısı:{item.likes}</small>
             </div>
           );
         })}
