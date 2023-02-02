@@ -21,20 +21,19 @@ const Picture = () => {
   return (
     <div className="picture">
       <h1>{loading ? "Yükleniyor" : "Fotoğraflar"}</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="search"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />{" "}
-        <button className="form-ara" disabled="">
-          {" "}
-          Bul
-        </button>
-      </form>
+      <div className="picture_form">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="search"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />{" "}
+          <button className="form-ara"> Bul</button>
+        </form>
+      </div>
 
-            {hidden && (
+      {hidden && (
         <div className="show">
           {shows?.map((item) => {
             //   const { id, webformatURL } = item;
@@ -42,7 +41,7 @@ const Picture = () => {
               <div className="picture-show" key={item.id}>
                 <div>
                   <p> Kategorisi: {item.tags}</p>
-                  <small>Beğeni sayısı:{item.likes}</small>
+                  <small className="like_picture">Beğeni sayısı:{item.likes}</small>
                 </div>
                 <img src={item.webformatURL} alt={item.tags} />
               </div>

@@ -2,10 +2,9 @@
   text-align: center;
   display: flex;
   align-items: center;
-
-  flex-basis: 50%;
 }
 
+/* App.js Css*/
 .header {
   flex-basis: 0 0 50%;
   color: cornflowerblue;
@@ -46,22 +45,28 @@
   justify-content: center;
 }
 
+/*Picture jsx. CSS*/
 .picture {
-  flex-basis: 50%;
-  color:rgb(176, 14, 95)
-
+  color: rgb(176, 14, 95);
+  text-align: center;
 }
 
-form{
- 
-  padding: 2rem;
-  background-color: aqua;
-  border-radius: 3%;
+.picture_form {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:0.2rem;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  max-width: 500px;
   text-align: center;
+  padding: 2rem;
+  background-color: aqua;
+  border-radius: 3%;
+  gap: 0.2rem;
 }
 
 input {
@@ -80,17 +85,22 @@ input {
   align-items: center;
   background-color: coral;
   border-color: coral;
-  
 }
+
 
 .video {
-  flex-basis: 50%;
-   color:rgb(198, 15, 201);
+  display: flex;
+  flex-direction: column;
+  color: rgb(198, 15, 201);
 }
 
-.show-hidden {
-  display: none;
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .show {
   display: flex;
   flex-wrap: wrap;
@@ -105,9 +115,14 @@ input {
   box-shadow: 0 3px 10px 0.5px;
 }
 
-.like_video {
+.like_picture {
+  display: inline-block;
   margin-bottom: 0.4rem;
-  padding: 0.5rem 0;
+  padding: 0.3rem 0;
 }
 
-
+.like_video {
+  display: inline-block;
+margin-bottom: 0.4rem;
+  padding: 0.3rem 0;
+}

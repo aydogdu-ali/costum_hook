@@ -20,18 +20,18 @@ const Video = () => {
   return (
     <div className="video">
       <h1>{loading ? "Yükleniyor" : "Videolar"}</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="search"
-          placeholder="search"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-        <button className="form-ara" disabled="">
-          {" "}
-          Bul
-        </button>
-      </form>
+      <div className="video_form">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="type"
+            placeholder="search"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+          <button className="form-ara">Bul</button>
+        </form>
+      </div>
+
       {hidden && (
         <div className="show">
           {shows.map((item) => {
