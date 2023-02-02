@@ -6,7 +6,8 @@ import { useFetch } from "../useFetch";
 const Video = () => {
     const [text1, setText1] = useState("");
     const url = `https://pixabay.com/api/videos/?key=31725179-e9547203f59a4095ebc0c6c08&q=${text1}&video_type=film&lang=tr&per_page=4`;
-   const { loading, shows } = useFetch(url); 
+    const { loading, shows } = useFetch(url);
+
 const handleSubmit = (e) => {
   e.preventDefault();
   setText1(text1);

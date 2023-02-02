@@ -20,8 +20,8 @@ export const useFetch = (url) => {
   useEffect(() => {
     getItem();
 
-    return ()=>{getItem()}
-  }, [url, getItem]);
+    // return ()=>{getItem()}
+  }, [url,getItem]);
 
-  return { loading, shows };
+  return { loading, shows }
 };

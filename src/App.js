@@ -12,9 +12,9 @@ function App() {
   setVideo(false)
  }
   const handeClickv = () => {
-  //   setPicture(false);
-  //   setVideo(true);
-  // };
+    setPicture(false);
+    setVideo(true);
+  
   }
   return (
     <>
