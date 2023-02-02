@@ -1,17 +1,21 @@
-import React from 'react'
-import { useState } from 'react';
-import { useFetch } from "../useFetch";
-
+import React from "react";
+import { useState } from "react";
+import { useFetch } from "../hook/useFetch";
 
 const Video = () => {
-    const [text1, setText1] = useState("");
-    const url = `https://pixabay.com/api/videos/?key=31725179-e9547203f59a4095ebc0c6c08&q=${text1}&video_type=film&lang=tr&per_page=4`;
-    const { loading, shows } = useFetch(url);
+  const [text, setText] = useState("");
+   const [hidden, setHidden] = useState(false);
+  const url = `https://pixabay.com/api/videos/?key=31725179-e9547203f59a4095ebc0c6c08&q=${text}&video_type=film&lang=tr&per_page=4`;
+  const { loading, shows } = useFetch(url);
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  setText1(text1);
-};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text === "") {
+      alert("Lüften aranacak kelimeyi girin");
+    } else {
+      setHidden(true);
+    }
+  };
 
   return (
     <div className="video">
@@ -20,27 +24,35 @@ const handleSubmit = (e) => {
         <input
           type="search"
           placeholder="search"
-          value={text1}
-          onChange={(e) => setText1(e.target.value)}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
         />
+        <button className="form-ara" disabled="">
+          {" "}
+          Bul
+        </button>
       </form>
-      <div className="show">
-        {shows.map((item) => {
-          return (
-            <div className="video-show" key={item.id}>
-              <div>
-                <p> Kategorisi: {item.tags}</p>
-                <small>Beğeni sayısı:{item.likes}</small>
+      {hidden && (
+        <div className="show">
+          {shows.map((item) => {
+            return (
+              <div className="video-show" key={item.id}>
+                <div>
+                  <p> Kategorisi: {item.tags}</p>
+                  <small className="like_video">
+                    Beğeni sayısı:{item.likes}
+                  </small>
+                </div>
+                <video width="320" height="240" controls>
+                  <source src={item.videos.large.url} type="video/mp4" />
+                </video>
               </div>
-              <video width="320" height="240" controls>
-                <source src={item.videos.large.url} type="video/mp4" />
-              </video>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
-}
+};
 
-export default Video
+export default Video;

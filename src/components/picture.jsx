@@ -1,35 +1,22 @@
 import React from "react";
 import { useState } from "react";
-import { useFetch } from "../useFetch";
+import { useFetch } from "../hook/useFetch";
 
 const Picture = () => {
   const [text, setText] = useState("");
-  const [hidden ,setHidden] = useState(false)
-  
+  const [hidden, setHidden] = useState(false);
+
   const url = `https://pixabay.com/api/?key=31725179-e9547203f59a4095ebc0c6c08&q=${text}&video_type=film&lang=tr&per_page=4`;
   const { loading, shows } = useFetch(url);
 
-const handleSubmit = (e)=>{
-e.preventDefault()
-if(text===""){
- alert("Lüften aranacak kelimeyi girin")
-
-}
-
-
- 
-else {
- 
-setHidden(true)
-
-}
- 
-
-}
-
-
-
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text === "") {
+      alert("Lüften aranacak kelimeyi girin");
+    } else {
+      setHidden(true);
+    }
+  };
 
   return (
     <div className="picture">
@@ -43,39 +30,26 @@ setHidden(true)
         />{" "}
         <button className="form-ara" disabled="">
           {" "}
-          ARA
+          Bul
         </button>
       </form>
 
-      {/* <div className={`${hidden ? "show-hidden" : "show"}`}>
-        {shows.map((item) => {
-          //   const { id, webformatURL } = item;
-          return (
-            <div className="picture-show" key={item.id}>
-              <div>
-                <p> Kategorisi: {item.tags}</p>
-                <small>Beğeni sayısı:{item.likes}</small>
+            {hidden && (
+        <div className="show">
+          {shows?.map((item) => {
+            //   const { id, webformatURL } = item;
+            return (
+              <div className="picture-show" key={item.id}>
+                <div>
+                  <p> Kategorisi: {item.tags}</p>
+                  <small>Beğeni sayısı:{item.likes}</small>
+                </div>
+                <img src={item.webformatURL} alt={item.tags} />
               </div>
-              <img src={item.webformatURL} alt={item.tags} />
-            </div>
-          );
-        })}
-      </div> */}
-
-      {hidden &&   <div className="show">
-        {shows?.map((item) => {
-          //   const { id, webformatURL } = item;
-          return (
-            <div className="picture-show" key={item.id}>
-              <div>
-                <p> Kategorisi: {item.tags}</p>
-                <small>Beğeni sayısı:{item.likes}</small>
-              </div>
-              <img src={item.webformatURL} alt={item.tags} />
-            </div>
-          );
-        })}
-      </div>}
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };
