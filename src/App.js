@@ -12,17 +12,17 @@ function App() {
   setVideo(false)
  }
   const handeClickv = () => {
-    setPicture(false);
-    setVideo(true);
-  };
-
+  //   setPicture(false);
+  //   setVideo(true);
+  // };
+  }
   return (
     <>
       <div className="header">
         <h1>Ne Aramak İstersiniz </h1>
-        <div>
-          <button onClick={handeClickp}> Fotoğraf</button>
-          <button onClick={handeClickv}>Video</button>
+        <div className="header_button">
+          <button  className="foto_button" onClick={handeClickp}> Fotoğraf</button>
+          <button className="video_button" onClick={handeClickv}>Video</button>
         </div>
       </div>
       <div className="App">
