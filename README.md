@@ -3,7 +3,9 @@
 
 #Bu web uygulamasında costum Hook nasıl kullanıldığı gösterilmiştir.
 
-#Costum Hook bizim için kod tekrarının önleyen bir yapıdır.
+#Costum Hook bizim için kod tekrarının önleyen bir yapıdır. 
+
+#Bu örnekte aynı API'den farklı componentlerden veri çekimi yapılarak gösterilmiştir.
 
 #Farklı componetlerde aynı Hook ile nasıl veri çekileceği gösterilmiştir.
 
