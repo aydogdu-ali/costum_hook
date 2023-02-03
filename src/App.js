@@ -4,34 +4,43 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
+  // apiden gelen verileri yakalamamak için stateleri tanımladım.
   const [picture, setPicture] = useState(false);
   const [video, setVideo] = useState(false);
-  const [hidden, setHidden] = useState(false)
 
+  // anasayfa butonu için state tanımladım.
+  const [hidden, setHidden] = useState(false);
 
-  const handleHome = ()=>{
-    setPicture(false)
-    setVideo(false)
-    setHidden(false)
-  }
+  // anasayfa butonunun yapacağı fonksiyonu tanımladım.
+  const handleHome = () => {
+    setPicture(false);
+    setVideo(false);
+    setHidden(false);
+  };
 
+  //fotograf arama butonu click eventini tanımladım.
   const handeClickp = () => {
     setPicture(true);
     setVideo(false);
     setHidden(true);
   };
+
+  //video arama butonu click eventini tanımladım.
   const handeClickv = () => {
     setPicture(false);
     setVideo(true);
-    setHidden(true)
+    setHidden(true);
   };
-
 
   return (
     <>
       <div className="header">
         <h1>Ne Aramak İstersiniz </h1>
-        <button className={`${hidden ? "" : "home"}`} onClick={handleHome}>
+        {/*statein durumuna göre class tanımladım.*/}
+        <button
+          className={`${hidden ? "home-show" : "home"}`}
+          onClick={handleHome}
+        >
           Anasayfa
         </button>
         <div className="header_button">
