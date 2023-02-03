@@ -5,6 +5,16 @@
 }
 
 /* App.js Css*/
+
+.home{
+  background-color: mediumseagreen;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  display: none;
+}
+
 .header {
   flex-basis: 0 0 50%;
   color: cornflowerblue;
@@ -69,6 +79,44 @@ form {
   gap: 0.2rem;
 }
 
+.picture-show img {
+  width: 400px;
+  height: 350px;
+  box-shadow: 0 3px 10px 0.5px;
+}
+
+.like_picture {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  padding: 0.3rem 0;
+}
+
+
+/* Video.jsx Css*/
+.video {
+  display: flex;
+  flex-direction: column;
+  color: rgb(198, 15, 201);
+  justify-content: center;
+  align-items: center;
+}
+
+.show {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 20%;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.like_video {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  padding: 0.3rem 0;
+}
+
+/* Ortak css*/
+
 input {
   color: black;
   font-size: 1.2rem;
@@ -85,44 +133,4 @@ input {
   align-items: center;
   background-color: coral;
   border-color: coral;
-}
-
-
-.video {
-  display: flex;
-  flex-direction: column;
-  color: rgb(198, 15, 201);
-}
-
-
-.video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.show {
-  display: flex;
-  flex-wrap: wrap;
-  flex-basis: 20%;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.picture-show img {
-  width: 400px;
-  height: 350px;
-  box-shadow: 0 3px 10px 0.5px;
-}
-
-.like_picture {
-  display: inline-block;
-  margin-bottom: 0.4rem;
-  padding: 0.3rem 0;
-}
-
-.like_video {
-  display: inline-block;
-margin-bottom: 0.4rem;
-  padding: 0.3rem 0;
 }

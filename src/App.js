@@ -6,20 +6,34 @@ import { useState } from "react";
 function App() {
   const [picture, setPicture] = useState(false);
   const [video, setVideo] = useState(false);
+  const [hidden, setHidden] = useState(false)
+
+
+  const handleHome = ()=>{
+    setPicture(false)
+    setVideo(false)
+    setHidden(false)
+  }
 
   const handeClickp = () => {
     setPicture(true);
     setVideo(false);
+    setHidden(true);
   };
   const handeClickv = () => {
     setPicture(false);
     setVideo(true);
+    setHidden(true)
   };
+
 
   return (
     <>
       <div className="header">
         <h1>Ne Aramak İstersiniz </h1>
+        <button className={`${hidden ? "" : "home"}`} onClick={handleHome}>
+          Anasayfa
+        </button>
         <div className="header_button">
           <button className="foto_button" onClick={handeClickp}>
             {" "}
