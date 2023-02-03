@@ -34,6 +34,7 @@ function App() {
 
   return (
     <>
+    
       <div className="header">
         <h1>Ne Aramak İstersiniz </h1>
         {/*statein durumuna göre class tanımladım.*/}
